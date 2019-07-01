@@ -9,6 +9,7 @@ namespace playground
         {
             SayHey();
             SayHey("Macy");
+            SayHey("Macy", "Draper");
         }
         static void SayHey()
         {
@@ -16,7 +17,11 @@ namespace playground
         }
         static void SayHey(string name)
         {
-            Console.WriteLine("hey, " + name + "!");
+            Console.WriteLine("Hey, " + name + "!");
+        }
+        static void SayHey(string firstName, string lastName)
+        {
+            Console.WriteLine("Hey, " + firstName + " " + lastName + "!");
         }
     }
 }
