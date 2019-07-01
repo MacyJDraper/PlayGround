@@ -7,27 +7,16 @@ namespace playground
     {
         static void Main(string[] args)
         {
-            Cat cat1 = new Cat(); // You can write like this or like line 15-25
-            cat1.Name = "Oscar";
-            cat1.Color = "brown";
-
-            Random rnd = new Random();
-
-            rnd.Next();
-            cat1.IntroduceCat();
-
-            Console.WriteLine("Cats 1's name is " + cat1.Name);
-
+            SayHey();
+            SayHey("Macy");
         }
-    }
-    class Cat
-    {
-        public string Name { get; set; }
-        public string Color { get; set; }
-
-        public void IntroduceCat()
+        static void SayHey()
         {
-            Console.WriteLine("Hi! I'm " + Name + "!");
+            Console.WriteLine("Hey!");
+        }
+        static void SayHey(string name)
+        {
+            Console.WriteLine("hey, " + name + "!");
         }
     }
 }
