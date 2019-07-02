@@ -1,36 +1,15 @@
-﻿using System;
-
-
-namespace playground
+﻿namespace playground
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string myString = "hello";
+            Dog myExampleDog = new Dog();
+            myExampleDog.Name = "Spot";
+            myExampleDog.NumberOfLegs = 4;
 
-            Dog myDog = new Dog();
-            Dog mySecondDog = new Dog();
-
-            myDog.Name = "Snoopy";
-            myDog.NumberOfLegs = 4;
-
-            mySecondDog.Name = "Champion";
-            mySecondDog.NumberOfLegs = 3;
-
-            myDog.Speak();
-            mySecondDog.Speak();
+            Dog mySecondDog = new Dog() { Name = "Spot", NumberOfLegs = 4 };
         }
       
     }
-    class Dog
-    {
-        public string Name { get; set; }
-        public int NumberOfLegs { get; set; }
-
-        public void Speak()
-        {
-            Console.WriteLine("Ruff! My name is " + Name + "!");
-        }
-     }
 }
