@@ -17,24 +17,20 @@ namespace playground
 
             mySecondDog.Name = "Champion";
             mySecondDog.NumberOfLegs = 3;
+
+            myDog.Speak();
+            mySecondDog.Speak();
         }
       
     }
     class Dog
     {
         public string Name { get; set; }
-        //public string Name //This is the same thing as  public string Name { get; set; }
-        //{
-        //    get
-        //    {
-        //        return Name;
-        //    }
-        //    set
-        //    {
-        //        Name = value;
-        //    }
-        //}
         public int NumberOfLegs { get; set; }
 
-    }
+        public void Speak()
+        {
+            Console.WriteLine("Ruff! My name is " + Name + "!");
+        }
+     }
 }
