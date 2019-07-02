@@ -31,11 +31,9 @@ namespace playground
             string numberOfCupsResponse = Console.ReadLine();
             stand.NumberOfCupsSold = int.Parse(numberOfCupsResponse);
 
-            decimal totalFixedCosts = stand.TableCost + stand.ChairCost + stand.SignCost;
-            decimal totalVariableCost = (stand.LemonsCostPerCup + stand.SugarCostPerCup) * stand.NumberOfCupsSold;
-            decimal totalRevenue = stand.PricePerCup * stand.NumberOfCupsSold;
-
-            decimal totalProfit = totalRevenue - totalVariableCost - totalFixedCosts;
+            decimal totalCosts = stand.GetTotalExpenses();
+            decimal totalRevenue = stand.GetTotalRevenue();
+            decimal totalProfit = stand.GetTotalProfit();
 
             Console.WriteLine("Your profit will be $" + totalProfit);
         }

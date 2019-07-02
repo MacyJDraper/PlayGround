@@ -12,5 +12,19 @@ namespace playground
         public decimal PricePerCup { get; set; }
         public int NumberOfCupsSold { get; set; }
 
+        public decimal GetTotalRevenue()
+        {
+            return NumberOfCupsSold * PricePerCup;
+        }
+        public decimal GetTotalExpenses()
+        {
+            decimal fixedCosts = TableCost + ChairCost + SignCost;
+            decimal variableCosts = (LemonsCostPerCup + SugarCostPerCup + SugarCostPerCup) * NumberOfCupsSold;
+            return fixedCosts + variableCosts;
+        }
+        public decimal GetTotalProfit()
+        {
+            return GetTotalRevenue() - GetTotalExpenses();
+        }
     }
 }
