@@ -7,21 +7,34 @@ namespace playground
     {
         static void Main(string[] args)
         {
-            SayHey();
-            SayHey("Macy");
-            SayHey("Macy", "Draper");
+            string myString = "hello";
+
+            Dog myDog = new Dog();
+            Dog mySecondDog = new Dog();
+
+            myDog.Name = "Snoopy";
+            myDog.NumberOfLegs = 4;
+
+            mySecondDog.Name = "Champion";
+            mySecondDog.NumberOfLegs = 3;
         }
-        static void SayHey()
-        {
-            Console.WriteLine("Hey!");
-        }
-        static void SayHey(string name)
-        {
-            Console.WriteLine("Hey, " + name + "!");
-        }
-        static void SayHey(string firstName, string lastName)
-        {
-            Console.WriteLine("Hey, " + firstName + " " + lastName + "!");
-        }
+      
+    }
+    class Dog
+    {
+        public string Name { get; set; }
+        //public string Name //This is the same thing as  public string Name { get; set; }
+        //{
+        //    get
+        //    {
+        //        return Name;
+        //    }
+        //    set
+        //    {
+        //        Name = value;
+        //    }
+        //}
+        public int NumberOfLegs { get; set; }
+
     }
 }
