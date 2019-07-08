@@ -1,42 +1,27 @@
 ﻿using System;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
-namespace playground
-
+namespace Mark8InClassExamples
 {
     class Program
     {
-        static decimal GetDecimalAnswerFromUser(string question)
-        {
-            Console.WriteLine(question);
-            string response = Console.ReadLine();
-            decimal answer = decimal.Parse(response);
-            return answer;
-        }
-
         static void Main(string[] args)
         {
-            LemonadeStand stand = new LemonadeStand();
+            string url = "https://api.chucknorris.io/jokes/random";
+            HttpClient client = new HttpClient();
+            string response = client.GetStringAsync(url).Result;
 
-            Console.WriteLine("What is the name of this lemondade stand?");
-            stand.Name = Console.ReadLine();
+            //int jokeStartIndex = response.IndexOf("value") + 8;
+            //int jokeLength = response.Length - jokeStartIndex - 2;   
+            //string joke = response.Substring(jokeStartIndex, jokeLength);
 
-            stand.TableCost = GetDecimalAnswerFromUser("How much will your table cost?");
-            stand.ChairCost = GetDecimalAnswerFromUser("How much will your chair cost?");
-            stand.SignCost = GetDecimalAnswerFromUser("How much will your sign cost?");
-            stand.LemonsCostPerCup = GetDecimalAnswerFromUser("How much will the lemons cost per cup?");
-            stand.SugarCostPerCup = GetDecimalAnswerFromUser("How much will the sugar cost per cup?");
-            stand.PricePerCup = GetDecimalAnswerFromUser("What will be the price of a cup?");
+            string joke2 = JObject.Parse(response).GetValue("value").ToString();
 
-            Console.WriteLine("How many cups will you sell?");
-            string numberOfCupsResponse = Console.ReadLine();
-            stand.NumberOfCupsSold = int.Parse(numberOfCupsResponse);
+            Console.WriteLine(joke2);
+            //Console.WriteLine(joke);
 
-            decimal totalCosts = stand.GetTotalExpenses();
-            decimal totalRevenue = stand.GetTotalRevenue();
-            decimal totalProfit = stand.GetTotalProfit();
-
-            Console.WriteLine("Your profit will be $" + totalProfit);
         }
-      
     }
 }
+
