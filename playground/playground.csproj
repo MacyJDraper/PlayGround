@@ -11,6 +11,9 @@
   <ItemGroup>
     <Compile Remove="Cat.cs" />
     <Compile Remove="Dog.cs" />
-    <Compile Remove="LemonadeStand.cs" />
+    <Compile Remove="Singer.cs" />
+    <Compile Remove="Comedian.cs" />
+    <Compile Remove="Human.cs" />
+    <Compile Remove="IPerform.cs" />
   </ItemGroup>
 </Project>

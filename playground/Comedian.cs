@@ -4,8 +4,15 @@ using Newtonsoft.Json.Linq;
 
 namespace playground
 {
-    public class Comedian : Human
+    class Comedian : IPerform
     {
+        public void Perform()
+        {
+            Console.WriteLine("Welcome! Here's a joke!");
+            TellChuckNorrisJoke();
+            Console.WriteLine("You've been a great audince, goodnight!");
+        }
+
         public void TellChuckNorrisJoke()
         {
             string url = "https://api.chucknorris.io/jokes/random";
