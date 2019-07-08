@@ -4,10 +4,8 @@ using Newtonsoft.Json.Linq;
 
 namespace playground
 {
-    public class Comedian
+    public class Comedian : Human
     {
-        public string Name { get; set; }
-
         public void TellChuckNorrisJoke()
         {
             string url = "https://api.chucknorris.io/jokes/random";

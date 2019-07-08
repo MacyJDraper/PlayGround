@@ -7,11 +7,20 @@ namespace playground
         static void Main(string[] args)
         {
             Comedian comedian = new Comedian();
-            comedian.Name = "mitch hedberg";
+            comedian.Name = "Macy J";
+
+            Singer mySinger = new Singer();
+            mySinger.Name = "Sara Dent";
+
+            TellToIntroduce(comedian);
+            TellToIntroduce(mySinger);
 
             comedian.TellChuckNorrisJoke();
-            comedian.TellChuckNorrisJoke();
-            comedian.TellChuckNorrisJoke();
+        }
+        static void TellToIntroduce(Human myHuman)
+        {
+            myHuman.Introduce();
+            
         }
     }
 }
